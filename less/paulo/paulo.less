@@ -1,0 +1,184 @@
+@font-face {
+	font-family: fontawesome-webfont;
+	src: url('../fonts/fontawesome-webfont.eot'), url('../fonts/fontawesome-webfont.ttf') format('truetype'), url('../fonts/fontawesome-webfont.woff');
+}
+
+/*!
+ * Bootstrap v3.3.4 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+//
+// Load all less
+// --------------------------------------------------
+ 
+
+@mainColor : #000000;
+@backgroundcolor : rgba(0, 0, 0, 0.30);
+@backgroundcolor2 : rgba(0,0,0,0);
+@secondcolor: #e52928;
+@menuHeight: 80px;
+
+.navbar-inverse{
+    background-color : @mainColor ;
+    border  : 1px solid @mainColor;
+    
+  
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus{
+    background-color: @mainColor;
+
+}
+body{
+
+  color: white;
+   
+}
+
+ 
+
+
+
+#sobre{
+
+    height: 80vh;
+    padding-top:@menuHeight;
+    background-color: @secondcolor;
+
+}
+
+#sobre > .img1{
+height:80vh;
+width:100%;
+position: absolute;
+
+background: -moz-linear-gradient(-75deg, @backgroundcolor 33% , @backgroundcolor2 33.2%);
+background: -webkit-linear-gradient(-75deg,@backgroundcolor 33%, @backgroundcolor2 33.2%);
+background: -o-linear-gradient(-75deg, @backgroundcolor 33%, @backgroundcolor2 33.2%);
+background: -ms-linear-gradient(-75deg,  @backgroundcolor 33%,@backgroundcolor2 33.2%);
+background: linear-gradient(165deg, @backgroundcolor 33%,@backgroundcolor2 33.2%);
+
+
+}
+#sobre >.img2{
+height: 80vh;
+width: 100%;
+margin-top: -@menuHeight;
+position: absolute;
+background: -moz-linear-gradient(-75deg,  @backgroundcolor2 66%, @backgroundcolor 66.2% , @backgroundcolor);
+background: -webkit-linear-gradient(-75deg,  @backgroundcolor2 66%,@backgroundcolor 66.2% , @backgroundcolor);
+background: -o-linear-gradient(-75deg,  @backgroundcolor2 66%,@backgroundcolor 66.2% , @backgroundcolor);
+background: -ms-linear-gradient(-75deg,  @backgroundcolor2 66%,@backgroundcolor 66.2% , @backgroundcolor);
+background: linear-gradient(165deg,  @backgroundcolor2 66%,@backgroundcolor 66.2% , @backgroundcolor); 
+ 
+}
+
+
+section{
+
+    background-color: @secondcolor;
+    margin: 0 !important;
+}
+
+ 
+
+section  .odd {
+       width:100%;
+    height:100%;
+ position: absolute;
+    z-index:9999;
+
+background: -moz-linear-gradient(135deg, @backgroundcolor 50% , @backgroundcolor2 50.2%);
+background: -webkit-linear-gradient(135deg,@backgroundcolor 50%, @backgroundcolor2 50.2%);
+background: -o-linear-gradient(135deg, @backgroundcolor 50%, @backgroundcolor2 50.2%);
+background: -ms-linear-gradient(135deg,  @backgroundcolor 50%,@backgroundcolor2 50.2%);
+background: linear-gradient(45deg, @backgroundcolor 50%,@backgroundcolor2 50.2%);
+}
+
+section  .even {
+    width:100%;
+    height:100%;
+    position: absolute;
+    z-index:9999;
+    background: -moz-linear-gradient(-135deg,  @backgroundcolor2 50%, @backgroundcolor 50.2% , @backgroundcolor);
+background: -webkit-linear-gradient(-135deg,  @backgroundcolor2 50%,@backgroundcolor 50.2% , @backgroundcolor);
+background: -o-linear-gradient(-135deg,  @backgroundcolor2 50%,@backgroundcolor 50.2% , @backgroundcolor);
+background: -ms-linear-gradient(-135deg,  @backgroundcolor2 50%,@backgroundcolor 50.2% , @backgroundcolor);
+background: linear-gradient(135deg,  @backgroundcolor2 50%,@backgroundcolor 50.2% , @backgroundcolor); 
+ 
+
+}
+
+.job{
+    padding: 0!important;
+    height: 80vh;
+
+}
+
+footer{
+    background-color:@secondcolor;
+    height: 80vh;
+    width: 100%;
+}
+
+footer > div{
+
+    width:100%;
+    padding : 40px;
+
+}
+
+.navbar .navbar-brand {
+
+    color: #fff;
+    font-family:  Britannic Bold, fontawesome-webfont;
+    font-size: 60px;
+
+}
+
+body{
+
+     font-family:   fontawesome-webfont, Britannic Bold;
+
+}
+
+.imgright , .imgleft {
+max-height:80vh;
+position: relative;
+ height: 400px
+
+}
+
+section .imgright {
+float: right;
+
+}
+
+section .imgleft{
+float: left;
+
+
+}
+
+
+
+header{
+
+    text-align:center;
+}
+header .header-content{
+
+    height: 50%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    font-size: 60px
+    
+
+}

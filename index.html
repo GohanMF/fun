@@ -1,0 +1,280 @@
+<html>
+<head>
+    <title > something</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../css/paulo.css" />
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!--[if lte IE 8]>
+        <script src="excanvas.js">//</script>
+		<script src="http://jqcanvas.googlecode.com/svn/trunk/jqcanvas/jquery.jqcanvas.js">//</script>
+    <![endif]-->
+</head>
+<body>
+ 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myMenu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">GohanMF</a>
+        </div> 
+
+        <div class="collapse navbar-collapse" id="myMenu">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">content</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+ 
+
+    <header id="sobre">
+        <div class="img1"></div>
+        <div class="img2"></div>
+       
+        <div class="header-content">GohanMF </div> 
+
+    </header> 
+
+    <section class="row">
+        <article class="content col-xs-12 col-sm-6 job">
+            <div class="layer" ></div>
+
+            <img src="./img/damas.png"></img>
+            <div>Damas</div>
+        </article>
+        <article class="content col-xs-12 col-sm-6 job">
+            <div class="layer"></div>
+            <img src="./img/roda.png"></img>
+            <div>where should i go?</div>
+               
+
+</article>
+    </section>
+   
+
+    <footer>
+
+       
+    
+
+    </footer>
+ 
+           
+
+     <div>
+
+         <div>
+             <input type="button" value="Toggle Spin " />
+             <br /><br /><br /><br />
+             <div style="width:400px; height:400px ; border-radius:250px; border:1px solid black ; line-height:50px">
+                 <div class="teste" style="width:400px; height:400px ; border-radius:400px; line-height:400px ; position : absolute ; color: #000; "> <b>==>-</b></div>
+                 <canvas class="elie" id="myChart" style="position:absolute ; margin:25px ; width:350px ; height :350px; z-index: 9999"></canvas>
+             </div>
+
+
+             <div class="legend"></div>
+
+             <div class="time"> </div>
+             <div class="degree"></div>
+             Contacto
+
+         </div>
+
+     </div>
+
+
+
+
+<script src="chart.js"></script>
+
+<script>
+$(function() {
+
+
+
+var data = [
+    {
+        value: 1,
+        color:"#F7464A",
+        highlight: "#FF5A5E",            
+        label: "Domvs"
+    },
+    {
+        value: 1,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "forum"
+    },
+    {
+        value: 1,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Alcochete"
+    }, {
+        value: 1,
+        color: "#F7464A",
+        highlight: "#FF5A5E",
+        label: "Domvs"
+    },
+    {
+        value: 1,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "forum"
+    },
+    {
+        value: 1,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Alcochete"
+    }, {
+        value: 1,
+        color: "#F7464A",
+        highlight: "#FF5A5E",
+        label: "Domvs"
+    },
+    {
+        value: 1,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "forum"
+    },
+    {
+        value: 1,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Alcochete"
+    }, {
+        value: 1,
+        color: "#F7464A",
+        highlight: "#FF5A5E",
+        label: "Domvs"
+    },
+    {
+        value: 1,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "forum"
+    },
+    {
+        value: 1,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Alcochete"
+    }
+
+]
+
+var options = {
+ animation: false,
+    //Boolean - Whether we should show a stroke on each segment
+    segmentShowStroke : false,
+  
+  tooltipTemplate: "<%= label %>",
+
+    onAnimationComplete: function()
+    {
+        this.showTooltip(this.segments, true);
+
+        //Show tooltips in bar chart (issue: multiple datasets doesnt work http://jsfiddle.net/5gyfykka/14/)
+        //this.showTooltip(this.datasets[0].bars, true);
+
+        //Show tooltips in line chart (issue: multiple datasets doesnt work http://jsfiddle.net/5gyfykka/14/)
+        //this.showTooltip(this.datasets[0].points, true);  
+    },
+	tooltipEvents: [],
+	showTooltips: true,
+ 
+    //String - A legend template
+    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend \"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+
+}
+
+
+
+
+
+var ctx = $("#myChart").get(0).getContext("2d");
+
+var myNewChart = new Chart(ctx).Pie(data,options);
+ 
+
+$(".legend"). append(myNewChart.generateLegend());
+ 
+    function AnimateRotate(duration, angle){
+    
+		var $elem = $('.elie');
+		var leftRight 
+        if( (Math.floor(Math.random()*100)%2) == 0 )
+        {
+            leftRight = "-"
+        }
+        else 
+        {
+            leftRight = "+"
+        }		
+		$({deg:0}).animate({deg:  leftRight + ((duration) * angle) } , {
+			duration: duration,
+			step: function(now)
+			{
+				$elem.css({ transform: 'rotate(' + now + 'deg)'});
+			}
+		});
+			
+	}
+    
+    $("input").click(       
+        function() {    
+            var time1 = Math.floor((Math.random() * 5000) + 5000);
+            var degree1 =Math.random()+ 1; 
+            AnimateRotate( time1 , degree1 );
+            $(".time").append(time1);
+            $(".degree").append(degree1);
+            
+        }
+        
+   
+    );
+	
+	$('.elie').click( function(evt){
+
+		var activePoints = myNewChart.getSegmentsAtEvent(evt);
+		console.log(myNewChart)  ; 
+		
+   // => activePoints is an array of segments on the canvas that are at the same position as the click event.
+});
+
+
+
+
+
+});  
+</script>
+
+
+<script src="./js/collapse.js"></script>
+
+
+    <script>
+
+        $("section > article:odd").children(".layer").addClass("odd");
+        $("section > article:odd").children("img").addClass("imgleft");
+
+        $("section > article:even").children(".layer").addClass("even");
+        $("section > article:even").children("img").addClass("imgright");
+
+
+    </script>
+</body>
+
+
+</html>
