@@ -29,7 +29,7 @@ body {
   padding-top: 80px;
   background-color: #e52928;
 }
-#sobre > .img1 {
+#sobre .img1 {
   height: 80vh;
   width: 100%;
   position: absolute;
@@ -39,7 +39,7 @@ body {
   background: -ms-linear-gradient(-75deg, rgba(0, 0, 0, 0.3) 33%, rgba(0, 0, 0, 0) 33.2%);
   background: linear-gradient(165deg, rgba(0, 0, 0, 0.3) 33%, rgba(0, 0, 0, 0) 33.2%);
 }
-#sobre > .img2 {
+#sobre .img2 {
   height: 80vh;
   width: 100%;
   margin-top: -80px;
@@ -77,7 +77,7 @@ section .even {
   background: linear-gradient(135deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3) 50.2%, rgba(0, 0, 0, 0.3));
 }
 .job {
-  padding: 0!important;
+  padding: 0 !important;
   height: 80vh;
 }
 footer {
@@ -85,7 +85,7 @@ footer {
   height: 80vh;
   width: 100%;
 }
-footer > div {
+footer div {
   width: 100%;
   padding: 40px;
 }
